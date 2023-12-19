@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "cypress": "^13.6.1",
+    "cypress-terminal-report": "^5.3.9",
+    "eslint": "^8.55.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^2.15.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "dayjs": "^1.11.10",
+    "lodash": "^4.17.21"
+  },
+  "scripts": {
+    "cy:run": "cypress run"
+  }
+}

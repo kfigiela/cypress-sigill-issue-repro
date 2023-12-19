@@ -1,0 +1,24 @@
+client:
+  image:
+    name: cypress/included:13.6.1
+    entrypoint: [""]
+  variables:
+    CYPRESS_RECORD_KEY: $CYPRESS_RECORD_KEY
+  script:
+    - npm ci
+    - npx cypress verify
+    - DEBUG=* timeout 55m npx cypress run --record --group "$SPECS" 2>&1 | tee output.txt
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+      - cypress/logs/**/*
+      - output.txt
+    expire_in: 14 day
+    reports:
+      junit: results/*
+  parallel:
+    matrix:
+      - SPECS: [1,2,3,4,5,6,7,8,9,10]
+  timeout: 60m

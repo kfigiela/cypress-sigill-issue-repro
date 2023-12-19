@@ -1,0 +1,6 @@
+**/node_modules/
+.direnv
+cypress/logs/
+cypress/screenshots/
+cypress/video/
+cypress/fixtures/trackers/*
